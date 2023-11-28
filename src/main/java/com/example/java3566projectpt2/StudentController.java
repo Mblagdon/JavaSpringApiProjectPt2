@@ -53,10 +53,10 @@ public class StudentController {
         Optional<Student> studentOptional = studentRepository.findById(id);
         if (studentOptional.isPresent()) {
             Student student = studentOptional.get();
-            // Update fields
+
             student.setFirstName(studentDetails.getFirstName());
             student.setLastName(studentDetails.getLastName());
-            // ... update other fields as needed
+
             studentRepository.save(student);
             return ResponseEntity.ok(student);
         } else {
